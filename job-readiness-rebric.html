@@ -1,0 +1,232 @@
+<!--  -->
+<form>
+  <div class="rubric-section aspect">
+    
+    <!-- ======================================= -->
+    <!-- Section Column 0 -->
+    <div class="rubric-section-score rubric-column level">
+      <div>Total Column</div>
+      <div>Description</div>
+      <div>total value
+        <span class="aspect-score"></span>
+      </div>
+    </div>
+
+    <!-- Column 1 -->
+    <div class="rubric-column">
+      <label>
+        <input type="checkbox" data-value="1">
+        <span>Item 1</span>
+      </label>
+      <label>
+        <input type="checkbox" data-value="1">
+        <span>Item 1</span>
+      </label>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="rubric-column">
+      <label>
+        <input type="checkbox" data-value="2">
+        <span>Item 1</span>
+      </label>
+      <label>
+        <input type="checkbox" data-value="2">
+        <span>Item 1</span>
+      </label>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="rubric-column">
+      <label>
+      <input type="checkbox" data-value="3">
+        <span>Item 1</span>
+      </label>
+      <label>
+        <input type="checkbox" data-value="3">
+        <span>Item 1</span>
+      </label>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="rubric-column">
+      <label>
+        <input type="checkbox" data-value="4">
+        <span>Item 1</span>
+      </label>
+      <label>
+        <input type="checkbox" data-value="4">
+        <span>Item 1</span>
+      </label>
+    </div>
+  </div>
+
+  <div class="rubric-section aspect">
+    
+    <!-- ======================================= -->
+    <!-- Section Column 0 -->
+    <div class="rubric-section-score rubric-column level">
+      <div>Total Column</div>
+      <div>Description</div>
+      <div>total value
+        <span class="aspect-score"></span>
+      </div>
+    </div>
+
+    <!-- Column 1 -->
+    <div class="rubric-column">
+      <label>
+        <input type="checkbox" data-value="1">
+        <span>Item 1</span>
+      </label>
+      <label>
+        <input type="checkbox" data-value="1">
+        <span>Item 1</span>
+      </label>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="rubric-column">
+      <label>
+        <input type="checkbox" data-value="2">
+        <span>Item 1</span>
+      </label>
+      <label>
+        <input type="checkbox" data-value="2">
+        <span>Item 1</span>
+      </label>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="rubric-column">
+      <label>
+        <input type="checkbox" data-value="3">
+        <span>Item 1</span>
+      </label>
+      <label>
+        <input type="checkbox" data-value="3">
+        <span>Item 1</span>
+      </label>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="rubric-column">
+      <label>
+        <input type="checkbox" data-value="4">
+        <span>Item 1</span>
+      </label>
+      <label>
+        <input type="checkbox" data-value="4">
+        <span>Item 1</span>
+      </label>
+    </div>
+  </div>
+  
+  <div>
+    Rubric Total Score: <span id="rubric-score"></span>
+  </div>
+
+</form>
+
+
+
+<style>
+  .rubric-section {
+    display: flex;
+    justify-content: center;
+    border: 1px solid;
+    margin: 0.5em;
+  }
+
+  .rubric-column {
+    border: 1px solid;
+    padding: 0.5em;
+    margin: 0.5em;
+  }
+
+  .rubric-column>label {
+    display: block;
+  }
+
+</style>
+
+
+
+<script>
+  // Get all checkboxes
+  const checkBoxes = document.querySelectorAll('input[type=checkbox]');
+  const rubricScore = document.getElementById('rubric-score');
+  const aspects = document.querySelectorAll('.aspect');
+  
+//  const rowScores = document.querySelectorAll('row-score');
+  
+  // Add an event for each checkbox
+  checkBoxes.forEach((cb) => {
+    cb.addEventListener('change', (e) => {
+      calculateScore();
+    });
+  });
+  
+  function getAspectScore() {
+    aspects.forEach((a) => {
+      const aspectCheckboxes = a.querySelectorAll('input[type=checkbox]')
+      const aspectScore = a.querySelector('.aspect-score');
+
+      let score = 0;
+      console.log(aspectCheckboxes)
+      aspectCheckboxes.forEach((cb) => {
+        score += cb.checked ? Number(cb.dataset.value) : 0;
+      });
+      console.log(score)
+      aspectScore.innerHTML = score;
+    });  
+  }
+
+  
+//  rowScores.forEach((rowScore) => {
+//    rowScore.innerHTML()
+//  });
+  
+  function calculateScore() {
+    let score = 0;
+    checkBoxes.forEach((cb) => {
+      score += cb.checked ? Number(cb.dataset.value) : 0;
+    });
+    // console.log(score);
+    rubricScore.innerHTML = score;
+    getAspectScore();
+  }
+  
+  /* 
+  
+  
+  
+  */
+  
+  // TODO: A system of class names 
+  // TODO: Define terms to create a common language
+  // TODO: Add boilerplate
+  // TODO: Add mock data to rubric
+  // TODO: Validate 
+  // TODO: Organize Files 
+  // TODO: Generate Columns dynamically
+  // TODO: Improves styles 
+  // TODO: Mock up a finished design
+  // TODO: Generate JSON from score
+  // TODO: Generate Rubric from JSON
+  // TODO: Highlights column
+  
+  // DONE: Show total score for whole rubric
+  // DONE: Show Score for row
+  
+  /*
+  
+  Goals: Create digital Rubric
+  
+  Easily create a rubric 
+  Easily score rubric
+  Share rubrics online 
+  Automatically score rubrics
+  
+  */
+</script>
