@@ -153,12 +153,14 @@
 
 
 <script>
+  // Handle updates and show score 
+    
   // Get all checkboxes
   const checkBoxes = document.querySelectorAll('input[type=checkbox]');
   const rubricScore = document.getElementById('rubric-score');
   const aspects = document.querySelectorAll('.aspect');
   
-//  const rowScores = document.querySelectorAll('row-score');
+  // const rowScores = document.querySelectorAll('row-score');
   
   // Add an event for each checkbox
   checkBoxes.forEach((cb) => {
@@ -181,11 +183,6 @@
       aspectScore.innerHTML = score;
     });  
   }
-
-  
-//  rowScores.forEach((rowScore) => {
-//    rowScore.innerHTML()
-//  });
   
   function calculateScore() {
     let score = 0;
@@ -197,36 +194,25 @@
     getAspectScore();
   }
   
-  /* 
+  // 
+  
+  const sampleRubric = {
+    title: 'Job readiness', 
+    author: 'Braus', 
+    rubric: [
+      {title: 'Portfolio', columns: [
+        {title: 'Beginner', score: 1, attributes: [
+          'Portfolio is sparse', '3< live projects', 'projects just from tutorials']}, 
+        {title: 'Initial Mastery', score: 2, attributes: [
+          'Portfolio is live', '3+ live projects', 'Projects do not throw errors']}, 
+        {title: 'Approaching Mastery', score: 3, attributes: [
+          'Shows an array of original projects', 'Projects are navigable and unique', 'Code is available and easy to find']}, 
+        {title: 'Mastery', score: 4, attributes: [
+          'Projects are reactive and sophisticated', 'At least one project is of exceptional quality', 'Projects include in depth readme.']}
+      ]}
+    ]
+  }
   
   
   
-  */
-  
-  // TODO: A system of class names 
-  // TODO: Define terms to create a common language
-  // TODO: Add boilerplate
-  // TODO: Add mock data to rubric
-  // TODO: Validate 
-  // TODO: Organize Files 
-  // TODO: Generate Columns dynamically
-  // TODO: Improves styles 
-  // TODO: Mock up a finished design
-  // TODO: Generate JSON from score
-  // TODO: Generate Rubric from JSON
-  // TODO: Highlights column
-  
-  // DONE: Show total score for whole rubric
-  // DONE: Show Score for row
-  
-  /*
-  
-  Goals: Create digital Rubric
-  
-  Easily create a rubric 
-  Easily score rubric
-  Share rubrics online 
-  Automatically score rubrics
-  
-  */
 </script>

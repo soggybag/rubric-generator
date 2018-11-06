@@ -1,0 +1,47 @@
+{
+   "title": "Job readiness",
+   "author": "Braus",
+   "rubric": [
+      {
+         "title": "Portfolio",
+         "columns": [
+            {
+               "title": "Beginner",
+               "score": 1,
+               "attributes": [
+                  "Portfolio is sparse",
+                  "3< live projects",
+                  "projects just from tutorials"
+               ]
+            },
+            {
+               "title": "Initial Mastery",
+               "score": 2,
+               "attributes": [
+                  "Portfolio is live",
+                  "3+ live projects",
+                  "Projects do not throw errors"
+               ]
+            },
+            {
+               "title": "Approaching Mastery",
+               "score": 3,
+               "attributes": [
+                  "Shows an array of original projects",
+                  "Projects are navigable and unique",
+                  "Code is available and easy to find"
+               ]
+            },
+            {
+               "title": "Mastery",
+               "score": 4,
+               "attributes": [
+                  "Projects are reactive and sophisticated",
+                  "At least one project is of exceptional quality",
+                  "Projects include in depth readme."
+               ]
+            }
+         ]
+      }
+   ]
+}
